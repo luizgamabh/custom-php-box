@@ -1,0 +1,24 @@
+alias sassy='sass --compass --style compressed --watch .:.'
+alias cl='ssh guto@52.1.58.96'
+alias ms='ssh ubuntu@54.152.2.57'
+alias ufmg='ssh luizgama@150.164.80.212'
+alias rb='git clean -df && git ls-files --modified | xargs git checkout --'
+alias c='git clone'
+alias glp="git log --date=local --format='%Cblue%h%Creset - %Cgreen%an%Creset - %Cred%s%Creset - %Cgreen%ad, %Creset%ar'"
+alias braganet='ssh root@150.164.80.188'
+
+# start agent if necessary
+# if [ -z $SSH_AGENT_PID ] && [ -z $SSH_TTY ]; then  # if no agent & not in ssh
+#   eval `ssh-agent -s` > /dev/null
+# fi
+# added_keys=`ssh-add -l`
+# if [ ! $(echo $added_keys | grep -o -e ~/.ssh/id_rsa > /dev/null 2>&1) ]; then
+#   ssh-add ~/.ssh/id_rsa > /dev/null
+# fi
+
+function git_branch_name(){
+  git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* ([A-Za-z0-9]+)$/(\1)/'
+}
+PS1="\[\e[00;36m\]\t\[\e[0m\]\[\e[00;37m\]-\[\e[0m\]\[\e[00;32m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;32m\]\h\[\e[0m\]\[\e[00;37m\]:\[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;31m\]\$(git_branch_name)\[\e[0m\]\[\e[00;37m\]\\$\[\e[0m\] "
+
+cd /var/www/html

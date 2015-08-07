@@ -1,0 +1,17 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook 'apt'
+cookbook 'htop'
+cookbook 'curl'
+cookbook 'zlib'
+cookbook 'build-essential'
+cookbook 'mysql', '~> 5.5'
+cookbook 'nodejs'
+cookbook 'vim'
+cookbook 'imagemagick'
+cookbook 'xml', '~> 1.2.13'
+cookbook 'apache2', '~> 3.1.0'
+cookbook 'php', '~> 1.7.0'
+cookbook 'apache2', '~> 3.1.0'
+cookbook 'custombox', path: 'vendor/cookbooks/custombox'
+
